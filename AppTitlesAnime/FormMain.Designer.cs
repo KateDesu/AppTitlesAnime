@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             btnShowTypes = new Button();
+            flowLayoutPanel = new FlowLayoutPanel();
+            btnShowTitles = new Button();
+            flowLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
             // btnShowTypes
             // 
             btnShowTypes.AutoSize = true;
-            btnShowTypes.Location = new Point(12, 12);
+            btnShowTypes.Location = new Point(13, 13);
             btnShowTypes.Name = "btnShowTypes";
             btnShowTypes.Size = new Size(313, 35);
             btnShowTypes.TabIndex = 0;
@@ -42,23 +45,50 @@
             btnShowTypes.UseVisualStyleBackColor = true;
             btnShowTypes.Click += BtnShowTypes_Click;
             // 
+            // flowLayoutPanel
+            // 
+            flowLayoutPanel.Controls.Add(btnShowTypes);
+            flowLayoutPanel.Controls.Add(btnShowTitles);
+            flowLayoutPanel.Dock = DockStyle.Fill;
+            flowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel.Location = new Point(0, 0);
+            flowLayoutPanel.Name = "flowLayoutPanel";
+            flowLayoutPanel.Padding = new Padding(10);
+            flowLayoutPanel.Size = new Size(824, 444);
+            flowLayoutPanel.TabIndex = 1;
+            // 
+            // btnShowTitles
+            // 
+            btnShowTitles.AutoSize = true;
+            btnShowTitles.Location = new Point(13, 54);
+            btnShowTitles.Name = "btnShowTitles";
+            btnShowTitles.Size = new Size(313, 35);
+            btnShowTitles.TabIndex = 1;
+            btnShowTitles.Text = "Отобразить список \"Аниме\"";
+            btnShowTitles.UseVisualStyleBackColor = true;
+            btnShowTitles.Click += BtnShowTitles_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(824, 444);
-            Controls.Add(btnShowTypes);
+            Controls.Add(flowLayoutPanel);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Главная форма";
+            flowLayoutPanel.ResumeLayout(false);
+            flowLayoutPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button btnShowTypes;
+        private FlowLayoutPanel flowLayoutPanel;
+        private Button btnShowTitles;
     }
 }

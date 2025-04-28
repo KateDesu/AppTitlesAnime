@@ -12,5 +12,11 @@ namespace AppTitlesAnime
             FormListTypes formListTypes = new FormListTypes();
             formListTypes.Show();
         }
+         
+        private void BtnShowTitles_Click(object sender, EventArgs e)
+        {
+            FormListTitles formListTitles = new FormListTitles();
+            formListTitles.Show();
+        }
     }
 }

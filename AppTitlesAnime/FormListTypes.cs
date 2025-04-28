@@ -1,14 +1,6 @@
-﻿using AppTitlesAnime.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using AppContext = AppTitlesAnime.Models.AppContext;
 using Type = AppTitlesAnime.Models.Type;
 
@@ -48,14 +40,14 @@ namespace AppTitlesAnime
 
         private void BtnAddType_Click(object sender, EventArgs e)
         {
-            FormAddType formAddType = new();
-            DialogResult result = formAddType.ShowDialog(this);
+            FormAddUpdateType formAddUpdateType = new();
+            DialogResult result = formAddUpdateType.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
                 return;
 
             Type type = new Type();
-            type.TypeName = formAddType.textBoxTypeName.Text;
+            type.TypeName = formAddUpdateType.textBoxTypeName.Text;
 
             db.Types.Add(type);
             db.SaveChanges();
@@ -77,7 +69,7 @@ namespace AppTitlesAnime
                 return;
 
             Type type = db.Types.Find(id);
-            FormAddType formAddType = new();
+            FormAddUpdateType formAddType = new();
             formAddType.textBoxTypeName.Text = type.TypeName;
 
             DialogResult result = formAddType.ShowDialog(this);
