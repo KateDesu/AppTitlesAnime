@@ -68,7 +68,7 @@ namespace AppTitlesAnime
             if (!converted)
                 return;
 
-            Type type = db.Types.Find(id);
+            Type type = db.Types.Find(id)!;
             FormAddUpdateType formAddType = new();
             formAddType.textBoxTypeName.Text = type.TypeName;
 
